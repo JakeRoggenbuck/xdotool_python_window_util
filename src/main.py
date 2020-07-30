@@ -6,17 +6,17 @@ class Move:
         self.move_type = move_type
         self.x = x
         self.y = y
-    
+
     def get_move_type(self):
         if self.move_type:
-            return '--relative'
+            return "--relative"
         else:
-            return ''
+            return ""
 
     def get_current(self):
         bspc_window = "bspc query -N -n"
         current_window = subprocess.check_output(bspc_window, shell=True)
-        return current_window.decode("utf-8").strip('\n')
+        return current_window.decode("utf-8").strip("\n")
 
     def move_command_gen(self, x, y):
         command_prefx = "xdotool windowmove "
@@ -27,7 +27,7 @@ class Move:
         move_command = self.move_command_gen(self.x, self.y)
         subprocess.run(move_command, shell=True)
         return str(move_command)
- 
+
 
 class Size:
     def __init__(self, x, y):
@@ -37,7 +37,7 @@ class Size:
     def get_current(self):
         bspc_window = "bspc query -N -n"
         current_window = subprocess.check_output(bspc_window, shell=True)
-        return current_window.decode("utf-8").strip('\n')
+        return current_window.decode("utf-8").strip("\n")
 
     def size_command_gen(self, x, y):
         command_prefx = "xdotool windowsize "
@@ -48,4 +48,3 @@ class Size:
         size_command = self.size_command_gen(self.x, self.y)
         subprocess.run(size_command, shell=True)
         return str(size_command)
-

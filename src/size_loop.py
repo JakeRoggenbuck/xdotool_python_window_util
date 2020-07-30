@@ -8,4 +8,3 @@ for j in range(1000):
     for b in range(0, 90):
         w = Size(0, b)
         w.size_win()
-
