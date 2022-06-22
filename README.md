@@ -3,7 +3,7 @@
 ## Use
 
 ### Size
-```
+```py
 from main import Size
 
 a = Size(40, 60)
@@ -11,7 +11,7 @@ a.size_win()
 ```
 
 ### Move
-```
+```py
 from main import Move
 
 a = Move(True, 20, 30)
@@ -20,7 +20,7 @@ a.move_win()
 
 ## Test
 
-```
+```sh
 PYTHONPATH=./src pytest
 ```
 
